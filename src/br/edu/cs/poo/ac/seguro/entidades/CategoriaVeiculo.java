@@ -1,27 +1,29 @@
 package br.edu.cs.poo.ac.seguro.entidades;
-
-public class CategoriaVeiculo {
-    private String nome;
-    private double fatorRisco;
-
-    public CategoriaVeiculo(String nome, double fatorRisco) {
-        this.nome = nome;
-        this.fatorRisco = fatorRisco;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public double getFatorRisco() {
-        return fatorRisco;
-    }
-
-    public void setFatorRisco(double fatorRisco) {
-        this.fatorRisco = fatorRisco;
-    }
+import static br.edu.cs.poo.ac.seguro.entidades.PrecosAnosCategoria.*;
+public enum CategoriaVeiculo {
+	
+	
+	BASICO(1,"Veículo econômico", PA_BASICO),
+	INTERMEDIARIO(2,"Veículo de categoria média", PA_INTERMEDIARIO),
+	LUXO(3, "Veículo de luxo", PA_LUXO),
+	SUPER_LUXO(4, "Veículo exclusivo", PA_SUPER_LUXO),
+	ESPORTIVO(5, "Veículo esportivo", PA_ESPORTIVO);
+		
+	private int codigo;
+	private String nome;
+	private PrecoAno[] precosAnos;
+	private CategoriaVeiculo(int codigo, String nome, PrecoAno[] precosAnos) {
+		this.codigo = codigo;
+		this.nome = nome;
+		this.precosAnos = precosAnos;
+	}
+	public int getCodigo() {
+		return codigo;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public PrecoAno[] getPrecosAnos() {
+		return precosAnos;
+	}
 }

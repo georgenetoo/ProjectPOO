@@ -8,8 +8,7 @@ public class SeguradoEmpresa extends Segurado {
     private double faturamento;
     private boolean ehLocadoraDeVeiculos;
 
-    public SeguradoEmpresa(String nome, Endereco endereco, LocalDate dataAbertura, BigDecimal bonus,
-                           String cnpj, double faturamento, boolean ehLocadoraDeVeiculos) {
+    public SeguradoEmpresa(String nome, Endereco endereco, LocalDate dataAbertura, BigDecimal bonus, String cnpj, double faturamento, boolean ehLocadoraDeVeiculos) {
         super(nome, endereco, dataAbertura, bonus);
         this.cnpj = cnpj;
         this.faturamento = faturamento;

@@ -7,8 +7,7 @@ public class SeguradoPessoa extends Segurado {
     private String cpf;
     private double renda;
 
-    public SeguradoPessoa(String nome, Endereco endereco, LocalDate dataNascimento, BigDecimal bonus,
-                          String cpf, double renda) {
+    public SeguradoPessoa(String nome, Endereco endereco, LocalDate dataNascimento, BigDecimal bonus, String cpf, double renda) {
         super(nome, endereco, dataNascimento, bonus);
         this.cpf = cpf;
         this.renda = renda;
