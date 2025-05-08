@@ -22,14 +22,13 @@ public enum TipoSinistro {
     public String getNome() {
         return nome;
     }
+
     public static TipoSinistro getTipoSinistro(int codigo) {
-        switch (codigo) {
-            case 1:  return COLISAO;
-            case 2:  return INCENDIO;
-            case 3:  return FURTO;
-            case 4:  return ENCHENTE;
-            case 5:  return DEPREDACAO;
-            default: return null;
+        for(TipoSinistro tipo : TipoSinistro.values()) {
+            if(tipo.getCodigo() == codigo) {
+                return tipo;
+            }
         }
+        return null;
     }
 }

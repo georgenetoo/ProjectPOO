@@ -3,8 +3,11 @@ package br.edu.cs.poo.ac.seguro.entidades;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Period;
+import java.io.Serializable;
 
-public class Segurado {
+public class Segurado implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String nome;
     private Endereco endereco;
     private LocalDate dataCriacao;
@@ -41,26 +44,19 @@ public class Segurado {
         this.dataCriacao = dataCriacao;
     }
 
+    public int getIdade() {
+        return Period.between(this.dataCriacao, LocalDate.now()).getYears();
+    }
+
     public BigDecimal getBonus() {
         return bonus;
     }
 
-    public int getIdade() {
-        if (dataCriacao == null) {
-            return 0;
-        }
-        return Period.between(dataCriacao, LocalDate.now()).getYears();
-    }
-
     public void creditarBonus(BigDecimal valor) {
-        if (valor != null) {
-            bonus = bonus.add(valor);
-        }
+        this.bonus = this.bonus.add(valor);
     }
 
     public void debitarBonus(BigDecimal valor) {
-        if (valor != null) {
-            bonus = bonus.subtract(valor);
-        }
+        this.bonus = this.bonus.subtract(valor);
     }
 }

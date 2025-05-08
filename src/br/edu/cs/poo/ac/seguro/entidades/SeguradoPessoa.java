@@ -4,10 +4,13 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class SeguradoPessoa extends Segurado {
-    private String cpf;
+    private static final long serialVersionUID = 1L;
+
+    private final String cpf;
     private double renda;
 
-    public SeguradoPessoa(String nome, Endereco endereco, LocalDate dataNascimento, BigDecimal bonus, String cpf, double renda) {
+    public SeguradoPessoa(String nome, Endereco endereco, LocalDate dataNascimento,
+                          BigDecimal bonus, String cpf, double renda) {
         super(nome, endereco, dataNascimento, bonus);
         this.cpf = cpf;
         this.renda = renda;
@@ -15,10 +18,6 @@ public class SeguradoPessoa extends Segurado {
 
     public String getCpf() {
         return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
     }
 
     public double getRenda() {
@@ -30,10 +29,10 @@ public class SeguradoPessoa extends Segurado {
     }
 
     public LocalDate getDataNascimento() {
-        return getDataCriacao();
+        return this.getDataCriacao();
     }
 
     public void setDataNascimento(LocalDate dataNascimento) {
-        setDataCriacao(dataNascimento);
+        this.setDataCriacao(dataNascimento);
     }
 }
